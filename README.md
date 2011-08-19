@@ -19,8 +19,9 @@ keyword and his own password.
 * Concat doctrine data files where /development/doctrine/data/fixtures/*.yml to same files on kebab project
 * Run `doctrine.php rebuild-db` then `doctrine.php load-data`
 
-# Develop
+# Development
 
 ## Team
 
 1. [Onur Özgür ÖZKAN](http://www.onurozgurozkan.com)
+1. [Yunus ÖZCAN](https://github.com/yunusozcan)
