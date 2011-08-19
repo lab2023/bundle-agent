@@ -5,12 +5,13 @@ keyword and his own password.
 
 # Requirements
 
+* Kebab 1.5.0.beta1
+
 # How to install
 
-## Copy files
+**Copy files**
 
-## Setup database
-
+**Setup database**
 
 # Develop
 
