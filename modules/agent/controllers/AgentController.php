@@ -13,9 +13,9 @@
  * to info@lab2023.com so we can send you a copy immediately.
  *
  *
- * @category   
- * @package    
- * @subpackage 
+ * @category   Kebab
+ * @package    Modules
+ * @subpackage Controller
  * @author     Onur Özgür ÖZKAN <onur.ozgur.ozkan@lab2023.com>
  * @copyright  Copyright (c) 2010-2011 lab2023 - internet technologies TURKEY Inc. (http://www.lab2023.com)
  * @license    http://www.kebab-project.com/cms/licensing
@@ -25,9 +25,9 @@
 /**
  * 
  *
- * @category   
- * @package    
- * @subpackage 
+ * @category   Kebab
+ * @package    Modules
+ * @subpackage Controller
  * @author     Onur Özgür ÖZKAN <onur.ozgur.ozkan@lab2023.com>
  * @copyright  Copyright (c) 2010-2011 lab2023 - internet technologies TURKEY Inc. (http://www.lab2023.com)
  * @license    http://www.kebab-project.com/cms/licensing
@@ -35,5 +35,42 @@
  */
 class Agent_AgentController extends Kebab_Rest_Controller
 {
-    
+    /**
+     * Login
+     * 
+     * @return void
+     */
+    public function postAction()
+    {
+        // Get params
+        $p              = $this->_helper->param();
+        $response       = $this->_helper->response();
+        $adminId        = Zend_Auth::getInstance()->getIdentity()->id;
+        $adminPassword  = Doctrine_Core::getTable('Model_Entity_User')->find($adminId)->password;
+        $validation     = true;
+
+        // Validation
+        if (md5($p['password']) != $adminPassword) {
+            $response->addNotification('ERR', 'Lütfen şifresinizi kontrol ediniz.');
+            $validation = false;
+        }
+
+        $kebabConfig = $this->getInvokeArg('bootstrap')->getOption('kebab');
+        if ($p['secureKey'] != $kebabConfig['securityKey']) {
+            $response->addNotification('ERR', 'Lütfen güvenlik anahtarınızı kontrol ediniz.');
+            $validation = false;
+        }
+
+        if ($validation === false) {
+            $response->setSuccess(false)->getResponse();
+        }
+
+        $userTable = Doctrine_Core::getTable('Model_Entity_User')->find($p['userId']);
+        $hasIdentity = Kebab_Authentication::signIn($userTable->userName, $userTable->password, false, false);
+        if ($hasIdentity) {
+            $this->_helper->response(true, 200)->getResponse();
+        } else {
+            $this->_helper->response();
+        }
+    }
 }
