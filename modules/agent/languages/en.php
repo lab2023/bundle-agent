@@ -34,7 +34,7 @@
  * @version    1.5.0
  */
 return array(
-
-    // SignUpController
-    'An other user uses this email.' => 'An other user uses this email.'
+    // Agent Controller
+    'Lütfen şifresinizi kontrol ediniz.' => 'Please check your password.',
+    'Lütfen güvenlik anahtarınızı kontrol ediniz.' => 'Please check your blowfish.'
 );
