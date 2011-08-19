@@ -11,7 +11,13 @@ keyword and his own password.
 
 **Copy files**
 
+* Copy modules/agent folder to /applications/modules/agent
+* Copy applications/administration/ folter to /web/assets/kebab/applications/administration
+
 **Setup database**
+
+* Concat doctrine data files where /development/doctrine/data/fixtures/*.yml to same files on kebab project
+* Run `doctrine.php rebuild-db` then `doctrine.php load-data`
 
 # Develop
 
