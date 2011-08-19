@@ -1,0 +1,9 @@
+.agentLogin-application-launcher-icon {
+    background-image: url(images/launcher.png);
+}
+.agentLogin-application-gui-icon {
+    background-image: url(images/gui.png);
+}
+#agentLogin-application-shortcut div {
+    background-image: url(images/shortcut.png);
+}
