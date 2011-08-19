@@ -1,0 +1,16 @@
+Model_Entity_Application:
+  Agent:
+    identity: agentLogin-application
+    className: KebabOS.applications.agentLogin.application.Bootstrap
+    name: agent
+    type: system
+    department: administration
+    version: 0.1.0.dev1
+    active: 1
+    Translation:
+      tr:
+        title: Ajan
+        description: Yetkili kullanıcı başkasının adına login olabilir.
+      en:
+        title: Agent
+        description: User who has right can login for an other user.

@@ -1,0 +1,4 @@
+Model_Entity_Controller:
+  Agent_Agent:
+    Module: Agent
+    name: agent

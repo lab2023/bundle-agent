@@ -1,0 +1,11 @@
+Model_Entity_Story:
+  Agent:
+    name: agent
+    Translation:
+      tr:
+        title: Ajan
+        description: Yetkili kullanıcı başkasının adına login olabilir.
+      en:
+        title: Agent
+        description: User who has right can login for an other user.
+    active: 1
