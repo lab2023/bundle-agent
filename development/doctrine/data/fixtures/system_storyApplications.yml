@@ -1,4 +1,4 @@
 Model_Entity_StoryApplication:
   AgentAgent:
     Story: Agent
-    Application: Agent
+    Application: Agentmo
