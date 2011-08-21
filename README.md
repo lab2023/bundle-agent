@@ -19,6 +19,14 @@ keyword and his own password.
 * Concat doctrine data files where /development/doctrine/data/fixtures/*.yml to same files on kebab project
 * Run `doctrine.php rebuild-db` then `doctrine.php load-data`
 
+**Setup Restfull Route**
+
+* If you use restfull controller, you must add `'agent' => array('agent')` to _initRestRoute() method at application/bootstrap.php 
+
+**Setup Role Story Management**  
+
+* After installation, you should have to give right to roles to use agent from Role Management
+
 # Development
 
 ## Team
