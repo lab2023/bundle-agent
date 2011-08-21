@@ -27,6 +27,10 @@ keyword and his own password.
 
 * After installation, you should have to give right to roles to use agent from Role Management
 
+**Security**
+
+* Change Agent Security key at module.ini default is 'agent-bundle'
+
 # Development
 
 ## Team
