@@ -38,6 +38,5 @@ return array(
     'Please check your password.' => 'Lütfen şifresinizi kontrol ediniz.',
     'Please check your blowfish.' => 'Lütfen güvenlik anahtarınızı kontrol ediniz.',
     'Operation was not performed.' => 'Operation was not performed.',
-    'Operation was performed.' => 'Operation was not performed.',
     'Some error occured. Please try later.' => 'Bazı hatalar oluştu lütfen sonra tekrar deneyiniz.'
 );

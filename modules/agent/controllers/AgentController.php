@@ -52,18 +52,18 @@ class Agent_AgentController extends Kebab_Rest_Controller
 
         // Validation
         if (md5($p['password']) != $adminPassword) {
-            $response->addNotification('ERR', 'Please check your password.');
+            $response->addNotification(Kebab_Notification::ERR, 'Please check your password.', true);
             $validation = false;
         }
 
         $agentConfig =  $this->getInvokeArg('bootstrap')->getResource('modules')->offsetGet('agent')->getOption('agent');
         if ($p['secureKey'] != $agentConfig['securityKey']) {
-            $response->addNotification('ERR', 'Please check your blowfish.');
+            $response->addNotification(Kebab_Notification::ERR, 'Please check your blowfish.', true);
             $validation = false;
         }
 
         if ($validation === false) {
-            $response->setSuccess(false)->addNotification(Kebab_Notification::ERR, 'Operation was not performed.')->getResponse();
+            $response->setSuccess(false)->addNotification(Kebab_Notification::ERR, 'Operation was not performed.', true)->getResponse();
         }
 
 
@@ -77,9 +77,9 @@ class Agent_AgentController extends Kebab_Rest_Controller
 
         // Response
         if ($hasIdentity) {
-            $response->addNotification(Kebab_Notification::INFO, 'Operation was performed.')->getResponse();
+            $response->setSuccess(true)->getResponse();
         } else {
-            $response->addNotification(Kebab_Notification::ERR, 'Some error occured. Please try later.')->getResponse();
+            $response->addNotification(Kebab_Notification::ERR, 'Some error occured. Please try later.', true)->getResponse();
         }
     }
 }
