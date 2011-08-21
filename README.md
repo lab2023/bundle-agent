@@ -23,6 +23,9 @@ keyword and his own password.
 
 * If you use restfull controller, you must add `'agent' => array('agent')` to _initRestRoute() method at application/bootstrap.php 
 
+**Setup Role Story Management**  
+
+* After installation, you should have to give right to roles to use agent from Role Management
 
 # Development
 
