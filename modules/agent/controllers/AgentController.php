@@ -55,8 +55,8 @@ class Agent_AgentController extends Kebab_Rest_Controller
             $validation = false;
         }
 
-        $kebabConfig = $this->getInvokeArg('bootstrap')->getOption('kebab');
-        if ($p['secureKey'] != $kebabConfig['securityKey']) {
+        $agentConfig =  $this->getInvokeArg('bootstrap')->getResource('modules')->offsetGet('agent')->getOption('agent');
+        if ($p['secureKey'] != $agentConfig['securityKey']) {
             $response->addNotification('ERR', 'Lütfen güvenlik anahtarınızı kontrol ediniz.');
             $validation = false;
         }
