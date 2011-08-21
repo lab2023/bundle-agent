@@ -5,6 +5,7 @@
  * @package     Applications
  * @namespace   KebabOS.applications.AgentLogin.application.views
  * @author      Tayfun Öziş ERİKAN <tayfun.ozis.erikan@lab2023.com>
+ * @author      Onur Özgür ÖZKAN <onur.ozgur.ozkan@lab2023.com>
  * @copyright   Copyright (c) 2010-2011 lab2023 - internet technologies TURKEY Inc. (http://www.lab2023.com)
  * @license     http://www.kebab-project.com/cms/licensing
  */
@@ -20,13 +21,12 @@ KebabOS.applications.agentLogin.application.views.AgentLoginForm = Ext.extend(Ex
         this.comboStore = new KebabOS.applications.agentLogin.application.models.UserDataStore({
             bootstrap:this.bootstrap,
             autoLoad: true
-            
         });
         
         var userCombobox = new Kebab.library.ext.AutocompleteComboBox({
             tpl:'<tpl for="."><div ext:qtip="{fullName}" class="x-combo-list-item">{fullName} - {email}</div></tpl>',
-            fieldLabel:'Kullanıcı e-postası',
-            emptyText:'Ad soyad veya e-posta adresi yazınız.',
+            fieldLabel: Kebab.helper.translate('Users e-mail'),
+            emptyText: Kebab.helper.translate('Write your name or email address'),
             typeAhead: true,
             allowBlank:false,
             triggerAction: 'all',
@@ -54,12 +54,12 @@ KebabOS.applications.agentLogin.application.views.AgentLoginForm = Ext.extend(Ex
                     },
                     items: [userCombobox,
                     {
-                        fieldLabel:'Yönetici şifresi',
+                        fieldLabel: Kebab.helper.translate('Admin Password'),
                         name: 'password',
                         allowBlank:false,
                         inputType: 'password'
                     },{
-                        fieldLabel:'Güvenlik kodu',
+                        fieldLabel: Kebab.helper.translate('Security Key'),
                         name: 'secureKey',
                         allowBlank:false,
                         inputType: 'password'

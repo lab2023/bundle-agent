@@ -20,10 +20,14 @@
  * @namespace   Kebab.i18n
  * @author      Tayfun Öziş ERİKAN <tayfun.ozis.erikan@lab2023.com>
  * @author      Yunus ÖZCAN <yunus.ozcan@lab2023.com>
+ * @author      Onur Özgür ÖZKAN <onur.ozgur.ozkan@lab2023.com>
  * @copyright   Copyright (c) 2010-2011 lab2023 - internet technologies TURKEY Inc. (http://www.lab2023.com)
  * @license     http://www.kebab-project.com/cms/licensing
  * @version    1.5.0
  */
 KebabOS.applications.agentLogin.application.languages.en = {
-
+    'Users e-mail': 'Users e-mail',
+    'Write your name or email address': 'Write your name or email address',
+    'Admin Password': 'Admin Password',
+    'Security Key': 'Security Key'
 };
