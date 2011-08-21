@@ -40,12 +40,7 @@ KebabOS.applications.agentLogin.application.controllers.Index = Ext.extend(Ext.u
                 method: 'POST',
 
                 success : function() {
-                    Kebab.helper.message(this.bootstrap.launcher.text, 'Operation was performed successfully');
                     Kebab.helper.redirect('backend/desktop/')
-                },
-
-                failure : function() {
-                    Kebab.helper.message(this.bootstrap.launcher.text, 'Operation was not performed', true);
                 }, scope:this
             });
         }

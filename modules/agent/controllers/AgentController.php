@@ -49,20 +49,21 @@ class Agent_AgentController extends Kebab_Rest_Controller
         $adminPassword  = Doctrine_Core::getTable('Model_Entity_User')->find($adminId)->password;
         $validation     = true;
 
+
         // Validation
         if (md5($p['password']) != $adminPassword) {
-            $response->addNotification('ERR', 'Lütfen şifresinizi kontrol ediniz.');
+            $response->addNotification('ERR', 'Please check your password.');
             $validation = false;
         }
 
         $agentConfig =  $this->getInvokeArg('bootstrap')->getResource('modules')->offsetGet('agent')->getOption('agent');
         if ($p['secureKey'] != $agentConfig['securityKey']) {
-            $response->addNotification('ERR', 'Lütfen güvenlik anahtarınızı kontrol ediniz.');
+            $response->addNotification('ERR', 'Please check your blowfish.');
             $validation = false;
         }
 
         if ($validation === false) {
-            $response->setSuccess(false)->getResponse();
+            $response->setSuccess(false)->addNotification(Kebab_Notification::ERR, 'Operation was not performed.')->getResponse();
         }
 
 
@@ -76,9 +77,9 @@ class Agent_AgentController extends Kebab_Rest_Controller
 
         // Response
         if ($hasIdentity) {
-            $this->_helper->response(true, 200)->getResponse();
+            $response->addNotification(Kebab_Notification::INFO, 'Operation was performed.')->getResponse();
         } else {
-            $this->_helper->response();
+            $response->addNotification(Kebab_Notification::ERR, 'Some error occured. Please try later.')->getResponse();
         }
     }
 }

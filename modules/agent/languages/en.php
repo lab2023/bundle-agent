@@ -35,6 +35,9 @@
  */
 return array(
     // Agent Controller
-    'Lütfen şifresinizi kontrol ediniz.' => 'Please check your password.',
-    'Lütfen güvenlik anahtarınızı kontrol ediniz.' => 'Please check your blowfish.'
+    'Please check your password.' => 'Lütfen şifresinizi kontrol ediniz.',
+    'Please check your blowfish.' => 'Lütfen güvenlik anahtarınızı kontrol ediniz.',
+    'Operation was not performed.' => 'Operation was not performed.',
+    'Operation was performed.' => 'Operation was not performed.',
+    'Some error occured. Please try later.' => 'Some error occured. Please try later.'
 );
