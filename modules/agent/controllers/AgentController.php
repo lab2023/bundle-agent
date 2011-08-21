@@ -65,9 +65,16 @@ class Agent_AgentController extends Kebab_Rest_Controller
             $response->setSuccess(false)->getResponse();
         }
 
-        // Response
+
         $userTable = Doctrine_Core::getTable('Model_Entity_User')->find($p['userId']);
         $hasIdentity = Kebab_Authentication::signIn($userTable->userName, $userTable->password, false, false);
+
+        $auth = Zend_Auth::getInstance()->getStorage()->read();
+        $auth->agent_id = (string) $adminId;
+        Zend_Auth::getInstance()->getStorage()->clear();
+        Zend_Auth::getInstance()->getStorage()->write($auth);
+
+        // Response
         if ($hasIdentity) {
             $this->_helper->response(true, 200)->getResponse();
         } else {
