@@ -15,7 +15,7 @@ KebabOS.applications.agentLogin.application.views.AgentLoginForm = Ext.extend(Ex
     
     initComponent: function() {
 
-        this.url = 'kebab/agent-login';
+        this.url = 'agent/agent';
 
         this.comboStore = new KebabOS.applications.agentLogin.application.models.UserDataStore({
             bootstrap:this.bootstrap,
