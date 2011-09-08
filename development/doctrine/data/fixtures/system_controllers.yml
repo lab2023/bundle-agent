@@ -2,3 +2,6 @@ Model_Entity_Controller:
   Agent_Agent:
     Module: Agent
     name: agent
+  Agent_Config:
+    Module: Agent
+    name: config

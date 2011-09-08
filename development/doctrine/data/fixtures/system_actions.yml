@@ -1,0 +1,4 @@
+Model_Entity_Action:
+  Agent_Config_Set:
+    Controller: Agent_Config
+    name: set

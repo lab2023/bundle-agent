@@ -9,3 +9,14 @@ Model_Entity_Story:
         title: Agent
         description: User who has right can login for an other user.
     active: 1
+    
+  SetAgentSecurityKey:
+    name: set-agent-security-key
+    Translation:
+      tr:
+        title: Ajan Gizli Kelimeyi Düzenleme
+        description: Yetkili kullanıcı ajan güvenlik kelimesini düzenler
+      en:
+        title: Set Agent Security Key
+        description: User who has right can set the agent secure key
+    active: 1

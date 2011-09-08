@@ -56,8 +56,8 @@ class Agent_AgentController extends Kebab_Rest_Controller
             $validation = false;
         }
 
-        $agentConfig =  $this->getInvokeArg('bootstrap')->getResource('modules')->offsetGet('agent')->getOption('agent');
-        if ($p['secureKey'] != $agentConfig['securityKey']) {
+        $agentConfig = Zend_Registry::get('agentConfig');
+        if ($p['secureKey'] != $agentConfig->securityKey) {
             $response->addNotification(Kebab_Notification::ERR, 'Please check your blowfish.', true);
             $validation = false;
         }

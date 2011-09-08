@@ -2,3 +2,6 @@ Model_Entity_Service:
   Agent:
     Story: Agent
     Resource: Agent_Agent
+  SetAgentSecurityKey:
+    Story: SetAgentSecurityKey
+    Action: Agent_Config_Set
